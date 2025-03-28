@@ -1,0 +1,80 @@
+/* This creates a "box" at the top of the page: 
+    - Flex container for centering text horizontally and vertically
+    - Fixed height (adjust as needed)
+    - Background color so it looks like a defined box
+*/
+.top-box {
+    display: flex;                  /* Activate Flexbox */
+    justify-content: center;        /* Horizontally center items */
+    align-items: center;            /* Vertically center items */
+    height: 400px;                  /* Make the header taller to form a box */
+    background-color: #571414;    /* Choose any background color */
+    margin: 0;                      /* Remove default margin if needed */
+    color: white;                 /* Change font color to white (or any desired color) */
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1rem;                             /* Spacing between boxes */
+    padding: 1rem;
+}
+
+.box {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.box img {
+    max-width: 100%;
+    height: 450px;
+    width: 350px;
+    display: block;
+    margin: 0 auto; /* Centers the image horizontally */
+    overflow: hidden;        /* If you want to clip the image if it's too large */
+}
+
+  
+/* Center the container in the page; 
+   set min-height to push content into the vertical center (using flex). */
+   .selection-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 70vh;        /* 70% of viewport height; adjust as needed */
+    gap: 2rem;               /* Spacing between the two boxes */
+  }
+  
+  /* Each clickable box */
+  .selection-box {
+    display: flex;
+    flex-direction: column;  /* Stack image above the text */
+    justify-content: center;
+    align-items: center;
+    width: 200px;            /* Fixed width (adjust as needed) */
+    height: 250px;           /* Fixed height so both boxes match (adjust as needed) */
+    text-decoration: none;   /* Remove underline from link */
+    border: 2px solid #444;
+    border-radius: 8px;      /* Slightly rounded corners */
+    background-color: #ffffff;
+    transition: transform 0.2s ease;
+    color: #333;             /* Text color */
+    overflow: hidden;        /* If you want to clip the image if it's too large */
+  }
+  
+  /* Hover effect: slight scale, darker border */
+  .selection-box:hover {
+    transform: scale(1.05);
+    border-color: #000;
+  }
+  
+  /* The images in the boxes */
+  .box-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  
