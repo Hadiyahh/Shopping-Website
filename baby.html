@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Baby Section - Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-box">
+        <h1>Hadiyah's Clothing Store: Baby Inventory</h1>
+    </header>
+
+    <main>
+        <div class="boxes">
+
+            <div class="box">
+                <img src="./baby_g/37562.jpg" alt="Join the Circus Onesie" class="box-image" id="circus-onesie-img">
+                <h3>Join the Circus Shirt</h3>
+            
+                <p>Select Color:</p>
+                <select onchange="updateProduct(this.value, 'circus-onesie-img', 'circus-onesie-desc')">
+                    <option value="./baby_g/37562.jpg|Green and Red">Green and Red</option>
+                    <option value="./baby_g/37563.jpg|White and Pink">White and Pink</option>
+                </select>
+            
+                <p id="circus-onesie-desc">Green and Red</p>
+                <p><strong>$19.99</strong></p>
+                <button class="add-to-cart" onclick="addToCart('Join the Circus Shirt', 19.99)">Add to Cart</button>
+            </div>
+            
+            <div class="box">
+                <img src="./baby_g/37583.jpg" alt="A show stopping Act Onesie" class="box-image" id="show-stopping-onesie-img">
+                <h3>A show stopping Act Onesie</h3>
+            
+                <p>Select Color:</p>
+                <select onchange="updateProduct(this.value, 'show-stopping-onesie-img', 'show-stopping-onesie-desc')">
+                    <option value="./baby_g/37583.jpg|Pink and Dark Pink">Pink and Dark Pink</option>
+                    <option value="./baby_g/37584.jpg|Green and Pink">Green and Pink</option>
+                    <option value="./baby_g/37585.jpg|White and Pink">White and Pink</option>
+                </select>
+            
+                <p id="show-stopping-onesie-desc">Pink and Dark Pink</p>
+                <p><strong>$19.99</strong></p>
+                <button class="add-to-cart" onclick="addToCart('A show stopping Act Onesie', 19.99)">Add to Cart</button>
+            </div>
+            
+            
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p class="footer-copy">© 2025 Hadiyah Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="addtoCart.js"></script>
+
+</body>
+</html>

@@ -1,3 +1,9 @@
+body {
+  background-color: #f0f0f0; /* Light gray background */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
 /* This creates a "box" at the top of the page: 
     - Flex container for centering text horizontally and vertically
     - Fixed height (adjust as needed)
@@ -11,70 +17,91 @@
     background-color: #571414;    /* Choose any background color */
     margin: 0;                      /* Remove default margin if needed */
     color: white;                 /* Change font color to white (or any desired color) */
-}
+    margin-bottom: 30px; 
 
+}
 .boxes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 1rem;                             /* Spacing between boxes */
-    padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjusted to 2 columns for better spacing */
+  gap: 2rem;                            /* Spacing between boxes */
+  padding: 2rem;
+  justify-items: center;                /* Centers the grid items horizontally */
 }
 
 .box {
-    border: 1px solid #ccc;
-    background-color: #fff;
-    padding: 1rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;                /* Removes underline from links */
+  color: inherit;                       /* Inherits text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .box img {
-    max-width: 100%;
-    height: 450px;
-    width: 350px;
-    display: block;
-    margin: 0 auto; /* Centers the image horizontally */
-    overflow: hidden;        /* If you want to clip the image if it's too large */
+  max-width: 100%;
+  height: 350px;          /* Adjust height as needed */
+  width: auto;            /* Maintain aspect ratio */
+  transition: opacity 0.3s ease;
 }
 
-  
-/* Center the container in the page; 
-   set min-height to push content into the vertical center (using flex). */
-   .selection-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    min-height: 70vh;        /* 70% of viewport height; adjust as needed */
-    gap: 2rem;               /* Spacing between the two boxes */
-  }
-  
-  /* Each clickable box */
-  .selection-box {
-    display: flex;
-    flex-direction: column;  /* Stack image above the text */
-    justify-content: center;
-    align-items: center;
-    width: 200px;            /* Fixed width (adjust as needed) */
-    height: 250px;           /* Fixed height so both boxes match (adjust as needed) */
-    text-decoration: none;   /* Remove underline from link */
-    border: 2px solid #444;
-    border-radius: 8px;      /* Slightly rounded corners */
-    background-color: #ffffff;
-    transition: transform 0.2s ease;
-    color: #333;             /* Text color */
-    overflow: hidden;        /* If you want to clip the image if it's too large */
-  }
-  
-  /* Hover effect: slight scale, darker border */
-  .selection-box:hover {
-    transform: scale(1.05);
-    border-color: #000;
-  }
-  
-  /* The images in the boxes */
-  .box-image {
-    max-width: 100%;
-    height: auto;
-  }
-  
+.box img:hover {
+  opacity: 0.8;
+}
 
-  
+.box h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+  .footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #888;
+}
+
