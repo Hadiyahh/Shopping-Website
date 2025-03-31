@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Baby Section - Inventory</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+
 </head>
 <body>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      
     <header class="top-box">
-        <h1>Hadiyah's Clothing Store: Baby Inventory</h1>
+        <h1>Hadiyah's Clothing Store</h1>
+        <div class="cart-icon" onclick="showCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
     </header>
+    
 
     <main>
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <a href="homepage.html">Home</a>
+            <a href="boys.html">Boys</a>
+            <a href="girl.html">Girls</a>
+            <a href="baby.html">Baby</a>
+            <a href="coming_soon.html">Accessories</a>
+            <a href="login.html">Login/Register</a>
+
+          </div>
+
         <div class="boxes">
 
             <div class="box">
@@ -61,7 +85,31 @@
         </div>
     </footer>
 
-    <script src="addtoCart.js"></script>
-
-</body>
-</html>
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+          </div>
+          <div class="modal-body" id="cart-content">
+            <p>No items in cart yet.</p>
+          </div>
+          <div class="modal-footer">
+            <p>Happy Shopping!</p>
+          </div>
+        </div>
+      </div>
+    
+      <script>
+        function toggleSidebar() {
+          const sidebar = document.querySelector('.sidebar');
+          const content = document.querySelector('.main-content');
+          sidebar.classList.toggle('closed');
+          content.classList.toggle('full-width');
+        }
+        </script>
+        
+    
+      <script src="addtoCart.js"></script>
+    </body>
+    </html>

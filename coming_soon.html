@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Hadiyah's Clothing Store</title>
+    <link rel="stylesheet" href="coming-soon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+    <div class="coming-soon-container">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Coming Soon!</h1>
+            <p>Working hard </p>
+            <div class="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+            <a href="homepage.html" class="home-button"><i class="fa-solid fa-house"></i> Go to the Home Page</a>
+        </div>
+    </div>
+
+<script>
+    const launchDate = new Date("May 5, 2025 12:00:00").getTime(); //after exams
+
+    const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+
+    if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector('.countdown').innerHTML = "<h2>Live now!</h2>";
+    }
+  }, 1000);
+</script>
+</body>
+</html>

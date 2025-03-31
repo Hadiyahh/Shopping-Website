@@ -5,48 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Homepage</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 </head>
 <body>
-    <header class="top-box">
-    <h1>Hadiyah's Clothing Store</h1>
-    </header>
-
-
-
-    <main>
-      <div class="boxes">
-    
-        <a href="boys.html" class="box">
-          <img src="./myImages/male_shopping.png" alt="Boys" class="box-image">
-          <h3>Shop Men's</h3>
-        </a>
-    
-        <a href="girl.html" class="box">
-          <img src="./myImages/female_shopping.png" alt="Girls" class="box-image">
-          <h3>Shop Women's</h3>
-        </a>
-
-        <a href="coming_soon.html" class="box">
-          <img src="./myImages/accessory.png" alt="Accessory" class="box-image">
-          <h3>Shop Other</h3>
-        </a>
-      </div>
-    </main>
-    
-
-</main>
-
-<footer class="footer">
-  <div class="footer-container">
-    <ul class="footer-links">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <p class="footer-copy">© 2025 Hadiyah Website. All rights reserved.</p>
+  <div class="hamburger-menu" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
   </div>
-</footer>
+  
+  <header class="top-box">
+    <h1>Hadiyah's Clothing Store</h1>
+    <div class="cart-icon" onclick="showCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+    </div>
+  </header>
 
+  <main>
+    <div class="sidebar">
+      <h3>Menu</h3>
+      <a href="homepage.html">Home</a>
+      <a href="boys.html">Boys</a>
+      <a href="girl.html">Girls</a>
+      <a href="baby.html">Baby</a>
+      <a href="coming_soon.html">Accessories</a>
+      <a href="login.html">Login/Register</a>
+    </div>
 
+    <div class="boxes">
+      <a href="boys.html" class="box">
+        <img src="./myImages/male_shopping.png" alt="Boys" class="box-image">
+        <h3>Shop Men's</h3>
+      </a>
+
+      <a href="girl.html" class="box">
+        <img src="./myImages/female_shopping.png" alt="Girls" class="box-image">
+        <h3>Shop Women's</h3>
+      </a>
+
+      <a href="coming_soon.html" class="box">
+        <img src="./myImages/accessory.png" alt="Accessory" class="box-image">
+        <h3>Shop Other</h3>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Hadiyah Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-btn" onclick="closeCart()">&times;</span>
+        <h2>Your Cart</h2>
+      </div>
+      <div class="modal-body" id="cart-content">
+        <p>No items in cart yet.</p>
+      </div>
+      <div class="modal-footer">
+        <p>Happy Shopping!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.main-content');
+      sidebar.classList.toggle('closed');
+      content.classList.toggle('full-width');
+    }
+    </script>
+    
+
+  <script src="addtoCart.js"></script>
 </body>
 </html>

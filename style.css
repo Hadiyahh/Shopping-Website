@@ -1,25 +1,57 @@
 body {
-  background-color: #f0f0f0; /* Light gray background */
+  background-color: #012709;
   margin: 0; /* Remove default margin */
-  font-family: Arial, sans-serif; /* Set a default font */
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+main {
+  flex: 1;
 }
 
-/* This creates a "box" at the top of the page: 
-    - Flex container for centering text horizontally and vertically
-    - Fixed height (adjust as needed)
-    - Background color so it looks like a defined box
-*/
+
 .top-box {
     display: flex;                  /* Activate Flexbox */
     justify-content: center;        /* Horizontally center items */
     align-items: center;            /* Vertically center items */
     height: 400px;                  /* Make the header taller to form a box */
-    background-color: #571414;    /* Choose any background color */
     margin: 0;                      /* Remove default margin if needed */
     color: white;                 /* Change font color to white (or any desired color) */
     margin-bottom: 30px; 
 
+    background-image: url('./myImages/header.jpg'); 
+    background-size: cover;              /* covers the entire header area */
+    background-position: center; /* Center the image */
+    padding: 0 2rem; /* Add padding to align nicely */
+
 }
+
+.cart-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: rgb(255, 0, 119);
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .boxes {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Adjusted to 2 columns for better spacing */
@@ -67,7 +99,7 @@ body {
 
 
   .footer {
-  background-color: #222;
+  background-color: #1C1C1C;
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -105,3 +137,165 @@ body {
   color: #888;
 }
 
+/* Sidebar menu styling */
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #3E2014;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #aeae1b;
+}
+
+.sidebar h3 {
+  color: white;
+  padding: 10px 15px;
+}
+
+/* Adjust main content position */
+.main-content {
+  margin-left: 220px; /* same as sidebar width + some padding */
+  padding: 20px;
+}
+/* Modal styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black with transparency */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header, .modal-footer {
+  padding: 10px;
+  background-color: #00250c;
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-footer {
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.close-btn {
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #aaa;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+
+.auth-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.auth-form {
+  width: 45%;
+  max-width: 400px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  gap: 10px; /* Space between elements */
+}
+
+/* Styles the heading inside the authentication form to center-align the text and add spacing below */
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form input, 
+.auth-form button {
+  width: 80%; /* or adjust as needed */
+  max-width: 300px;
+  box-sizing: border-box;  /* ensures padding is included within width */
+  padding: 10px;           /* consistent padding inside input/button */
+  margin: 8px auto;        /* auto margin horizontally to center */
+  display: block;          /* ensures it takes up its own line */
+}
+
+
+.auth-form button:hover {
+  background-color: #74dc97;
+}
+
+.hamburger-menu {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 5px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px; /* initial width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #3E2014;
+  padding-top: 60px;
+  transition: all 0.3s ease; /* smooth transition */
+}
+
+.sidebar.closed {
+  left: -200px; /* hide sidebar off-screen */
+}
+
+.main-content {
+  margin-left: 200px; /* adjust to sidebar width */
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.full-width {
+  margin-left: 0; /* occupy full width when sidebar closed */
+}

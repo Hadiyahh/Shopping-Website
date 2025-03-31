@@ -5,30 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Boys Section </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <a href="login.html">Login/Register</a>
+
 </head>
 <body>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+      
     <header class="top-box">
-    <h1>Hadiyah's Clothing Store: Boys Section </h1>
+        <h1>Hadiyah's Clothing Store</h1>
+        <div class="cart-icon" onclick="showCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
     </header>
+    
 
 <main>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <a href="homepage.html">Home</a>
+        <a href="boys.html">Boys</a>
+        <a href="girl.html">Girls</a>
+        <a href="baby.html">Baby</a>
+        <a href="coming_soon.html">Accessories</a>
+        <a href="login.html">Login/Register</a>
+
+      </div>
+
     <section class="boxes">
         <div class="box">
-            <a href="baby_boy.html" class="box-link">
+            <a href="coming_soon.html" class="box-link">
                 <img src="./myImages/baby_boy.jpg" alt="Image 2" />
                 <h3>Baby Boy</h3>
                 <p>Ages 0-1</p>
             </a>
         </div>
         <div class="box">
-            <a href="toddler.html" class="box-link">
+            <a href="coming_soon.html" class="box-link">
                 <img src="./myImages/toddler_boy.jpg" alt="Toddler" />
                 <h3>Toddler Boys Clothes</h3>
                 <p>Ages 2-3</p>
             </a>
         </div>
         <div class="box">
-            <a href="teen.html" class="box-link">
+            <a href="coming_soon.html" class="box-link">
                 <img src="./myImages/teen_boy.jpg" alt="Image 3" />
                 <h3>Kid</h3>
                 <p>Ages 7-10</p>
@@ -49,5 +73,31 @@
     </div>
 </footer>
 
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-btn" onclick="closeCart()">&times;</span>
+        <h2>Your Cart</h2>
+      </div>
+      <div class="modal-body" id="cart-content">
+        <p>No items in cart yet.</p>
+      </div>
+      <div class="modal-footer">
+        <p>Shopping is fun!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.main-content');
+      sidebar.classList.toggle('closed');
+      content.classList.toggle('full-width');
+    }
+    </script>
+    
+
+  <script src="addtoCart.js"></script>
 </body>
 </html>

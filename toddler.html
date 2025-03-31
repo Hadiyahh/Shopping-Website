@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Toddler Section - Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <header class="top-box">
+        <h1>Hadiyah's Clothing Store</h1>
+        <div class="cart-icon" onclick="showCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <a href="homepage.html">Home</a>
+            <a href="boys.html">Boys</a>
+            <a href="girl.html">Girls</a>
+            <a href="baby.html">Baby</a>
+            <a href="coming_soon.html">Accessories</a>
+            <a href="login.html">Login/Register</a>
+        </div>
+
+        <div class="boxes">
+            <div class="box">
+                <img src="./toddler_g/2699.jpg" alt="Pink Blue Dress" class="box-image">
+                <h3>Pink Blue Dress</h3>
+                <p><strong>$24.99</strong></p>
+                <button onclick="addToCart('Pink Blue Dress', 24.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/2706.jpg" alt="Pink Teddy Dress" class="box-image">
+                <h3>Pink Teddy Dress</h3>
+                <p><strong>$19.99</strong></p>
+                <button onclick="addToCart('Pink Teddy Dress', 19.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/2707.jpg" alt="Pink Bunny Dress" class="box-image">
+                <h3>Pink Bunny Dress</h3>
+                <p><strong>$21.99</strong></p>
+                <button onclick="addToCart('Pink Bunny Dress', 21.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/2712.jpg" alt="Blue Checkered Dress" class="box-image">
+                <h3>Blue Checkered Dress</h3>
+                <p><strong>$22.99</strong></p>
+                <button onclick="addToCart('Blue Checkered Dress', 22.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/34095.jpg" alt="Floral Summer Dress" class="box-image">
+                <h3>Floral Summer Dress</h3>
+                <p><strong>$29.99</strong></p>
+                <button onclick="addToCart('Floral Summer Dress', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/37588.jpg" alt="Pink Graphic Tee" class="box-image">
+                <h3>Pink Graphic Tee</h3>
+                <p><strong>$14.99</strong></p>
+                <button onclick="addToCart('Pink Graphic Tee', 14.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/41973.jpg" alt="Striped Pink Tee" class="box-image">
+                <h3>Striped Pink Tee</h3>
+                <p><strong>$12.99</strong></p>
+                <button onclick="addToCart('Striped Pink Tee', 12.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/41999.jpg" alt="Love Peace Tee" class="box-image">
+                <h3>Love Peace Tee</h3>
+                <p><strong>$15.99</strong></p>
+                <button onclick="addToCart('Love Peace Tee', 15.99)">Add to Cart</button>
+            </div>
+
+            <div class="box">
+                <img src="./toddler_g/43584.jpg" alt="Pink Butterfly Tee" class="box-image">
+                <h3>Pink Butterfly Tee</h3>
+                <p><strong>$17.99</strong></p>
+                <button onclick="addToCart('Pink Butterfly Tee', 17.99)">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p class="footer-copy">© 2025 Hadiyah Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeCart()">&times;</span>
+                <h2>Your Cart</h2>
+            </div>
+            <div class="modal-body" id="cart-content">
+                <p>No items in cart yet.</p>
+            </div>
+            <div class="modal-footer">
+                <p>Happy Shopping!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('closed');
+        }
+    </script>
+
+    <script src="addtoCart.js"></script>
+</body>
+</html>

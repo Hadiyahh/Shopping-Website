@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kid Section - Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    
+</head>
+<body>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <header class="top-box">
+        <h1>Hadiyah's Clothing Store</h1>
+        <div class="cart-icon" onclick="showCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <a href="homepage.html">Home</a>
+            <a href="boys.html">Boys</a>
+            <a href="girl.html">Girls</a>
+            <a href="baby.html">Baby</a>
+            <a href="coming_soon.html">Accessories</a>
+            <a href="login.html">Login/Register</a>
+        </div>
+        <div class="boxes">
+    
+            <div class="box">
+                <img src="./kid_g/50720.jpg" alt="Floral Dress" class="box-image" id="floral-dress-img">
+                <h3>Floral Dress</h3>
+            
+                <p>Select Color:</p>
+                <select onchange="updateProduct(this.value, 'floral-dress-img', 'floral-dress-desc')">
+                    <option value="./kid_g/50720.jpg|Orange">Orange</option>
+                    <option value="./kid_g/52123.jpg|Pink">Pink</option>
+                </select>
+            
+                <p id="floral-dress-desc">Orange</p>
+                <p><strong>$22.99</strong></p>
+                <button class="add-to-cart" onclick="addToCart('Floral Dress', 22.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/5414.jpg" alt="Blue Asymmetrical Dress" class="box-image">
+                <h3>Blue Asymmetrical Dress</h3>
+                <p>$24.99</p>
+                <button class="add-to-cart" onclick="addToCart('Blue Asymmetrical Dress', 24.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/52128.jpg" alt="Denim Sleeveless Dress" class="box-image">
+                <h3>Denim Sleeveless Dress</h3>
+                <p>$27.99</p>
+                <button class="add-to-cart" onclick="addToCart('Denim Sleeveless Dress', 27.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/4216.jpg" alt="Yellow Dress with Graphic" class="box-image">
+                <h3>Yellow Dress with Graphic</h3>
+                <p>$19.99</p>
+                <button class="add-to-cart" onclick="addToCart('Yellow Dress with Graphic', 19.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/29166.jpg" alt="Sleeveless Dress" class="box-image" id="sleeveless-dress-img">
+                <h3>Sleeveless Dress</h3>
+            
+                <p>Select Color:</p>
+                <select onchange="updateProduct(this.value, 'sleeveless-dress-img', 'sleeveless-dress-desc')">
+                    <option value="./kid_g/29166.jpg|Grey">Grey</option>
+                    <option value="./kid_g/29167.jpg|Red">Red</option>
+                </select>
+            
+                <p id="sleeveless-dress-desc">Grey</p>
+                <p><strong>$23.99</strong></p>
+                <button class="add-to-cart" onclick="addToCart('Sleeveless Dress', 23.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/38334.jpg" alt="White Graphic T-Shirt" class="box-image">
+                <h3>White Graphic T-Shirt</h3>
+                <p>$15.99</p>
+                <button class="add-to-cart" onclick="addToCart('White Graphic T-Shirt', 15.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/39836.jpg" alt="Peach Graphic Top" class="box-image">
+                <h3>Peach Graphic Top</h3>
+                <p>$14.99</p>
+                <button class="add-to-cart" onclick="addToCart('Peach Graphic Top', 14.99)">Add to Cart</button>
+            </div>
+    
+            <div class="box">
+                <img src="./kid_g/41972.jpg" alt="Striped Blue Top" class="box-image">
+                <h3>Striped Blue Top</h3>
+                <p>$12.99</p>
+                <button class="add-to-cart" onclick="addToCart('Striped Blue Top', 12.99)">Add to Cart</button>
+            </div>
+    
+        </div>
+    </main>
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p class="footer-copy">© 2025 Hadiyah Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeCart()">&times;</span>
+                <h2>Your Cart</h2>
+            </div>
+            <div class="modal-body" id="cart-content">
+                <p>No items in cart yet.</p>
+            </div>
+            <div class="modal-footer">
+                <p>Happy Shopping!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('closed');
+        }
+    </script>
+
+    <script src="addtoCart.js"></script>
+</body>
+</html>
